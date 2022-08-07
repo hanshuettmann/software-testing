@@ -77,6 +77,8 @@ void test_turn_all_led_on(void)
 // Turn off all led's at once
 void test_turn_all_led_off(void)
 {
+    TurnAllLedOn();
+
     TurnAllLedOff();
 
     /* All led's on corresponds to port -> 0 */
