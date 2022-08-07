@@ -12,10 +12,15 @@ static uint16_t LedToMask(uint8_t led)
     return (FIRST_BIT_ON << (led - LEDS_OFFSET));
 }
 
+static void SetAllLedOff(void)
+{
+    *port = LEDS_ALL_OFF;
+}
+
 void CreateLeds(uint16_t *port_address)
 {
     port = port_address;
-    *port = LEDS_ALL_OFF;
+    SetAllLedOff();
 }
 
 void TurnLedOn(uint8_t led)
@@ -35,10 +40,10 @@ void TurnAllLedOn(void)
 
 void TurnAllLedOff(void)
 {
-    *port = LEDS_ALL_OFF;
+    SetAllLedOff();
 }
 
 bool CheckLedState(uint8_t led)
 {
-    return *port & (1 << led - LEDS_OFFSET);
+    return *port & LedToMask(led);
 }

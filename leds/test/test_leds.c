@@ -99,9 +99,6 @@ void test_check_led_state_on(void)
 // Check Led State is OFF
 void test_check_led_state_off(void)
 {
-    TurnLedOn(8);
-    TurnLedOff(8);
-
     bool ledState = CheckLedState(8);
 
     /* ledState == false -> ledState OFF */
