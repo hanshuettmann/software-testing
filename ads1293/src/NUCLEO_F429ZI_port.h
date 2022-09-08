@@ -11,8 +11,18 @@
 /* Includes ------------------------------------------------------------------*/
 #include <stdbool.h>
 #include <stdint.h>
+#include <stddef.h>
 
 /* Public typedef ------------------------------------------------------------*/
+/**
+ * @brief  GPIO Bit SET and Bit RESET enumeration
+ */
+typedef enum
+{
+	GPIO_PIN_RESET = 0,
+	GPIO_PIN_SET
+} GPIO_PinState;
+
 typedef enum
 {
 	NUCLEO_SPI_ERROR,
